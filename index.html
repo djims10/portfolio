@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>navbar</title>
+    <title>Portfolio - Djibi Wellé</title>
     
     <style>
         *{
@@ -12,6 +12,7 @@
             list-style: none;
             text-decoration: none;
             color: bisque;
+            box-sizing: border-box;
         }
 
         html{
@@ -21,25 +22,24 @@
         body{
             background: #361509;
         }
+
         .header{
             display: flex;
             justify-content: space-between;
             align-items: center;     
             color: bisque;
             margin-top: 10px;
-            }
+        }
 
-            .header h1{
-                padding-left: 10px;
-
-            }
+        .header h1{
+            padding-left: 10px;
+        }
 
         .navbar ul {
             display: flex;
             gap: 20px;
             padding-right: 20px;
             font-size: 1.3rem;
-
         }
 
         .navbar li{
@@ -49,15 +49,14 @@
             align-items: center;
             padding: 20px;
             cursor: pointer;
-            
             border-radius: 20px;
             transition: 0.2s;
         }
         
         .navbar a{
-                text-decoration: none;
-                color: bisque;
-            }
+            text-decoration: none;
+            color: bisque;
+        }
 
         .navbar li:hover{
             background: brown;
@@ -76,6 +75,7 @@
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
+            padding-right: 20px;
         }
 
         .hamburger span{
@@ -86,23 +86,9 @@
             transition: 0.3s;
         }
 
-        @media screen and (max-width:600px) {
-            .hamburger{
-                display: flex;
-                
-            }
-
-            .navbar ul{
-                display: none;
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .navbar ul.active{
-                display: flex;
-            }
-        }
-
+        /* ========================
+           HERO
+        ======================== */
         .hero{
             width: 90%;
             margin: 0 auto;
@@ -110,9 +96,9 @@
             display: flex;
             justify-content: space-evenly;
             align-items: center; 
-            
-            color:bisque;
+            color: bisque;
         }
+
         .projet{
             width: 700px;
             display: flex;
@@ -123,21 +109,13 @@
         }
 
         @keyframes slideFromleft {
-            from{
-                transform: translateX(-700px);
-                opacity: 0;
-            }
-            to{
-                transform: translateX(0);
-                opacity: 1;
-            }
+            from{ transform: translateX(-700px); opacity: 0; }
+            to{ transform: translateX(0); opacity: 1; }
         }
-
 
         .projet h2{
             font-family: georgia;
             font-size: 3.5rem;
-            
         }
 
         .projet h3{
@@ -176,85 +154,143 @@
         .image img{
             width: 300px;
             animation: slideFromRight 2s ease;
-
         }
 
         @keyframes slideFromRight {
-            from{
-                transform: translateX(300px);
-                opacity: 0;
-            }
-            to{
-                transform: translateX(0);
-                opacity: 1;
-            }
+            from{ transform: translateX(300px); opacity: 0; }
+            to{ transform: translateX(0); opacity: 1; }
         }
 
-        
+        /* ========================
+           À PROPOS
+        ======================== */
+        .apropos {
+            min-height: 500px;
+            margin-top: 100px;
+            background: #42190b;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+            color: bisque;
+        }
 
-         @media screen and (max-width:320px){
-            .header{
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                
-            }
-            .navbar li{
-                font-size: 1rem;
-                padding: 20px 0;
-            
-            }
-            
-            
+        .apropos h2 {
+            font-size: 3rem;
+            margin-bottom: 50px;
+        }
 
+        .apropos-content {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 50px;
+            width: 90%;
+        }
 
-            .hero{
-                display: flex;
-                flex-direction: column-reverse;
-                justify-content: center;
-                align-items: center;
-                
+        .apropos-gauche {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 400px;
+        }
 
+        .apropos-gauche img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
 
-            }
-            
+        .apropos-gauche p {
+            text-align: justify;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
 
-            .hero h2{
-                font-size: 2rem;
-            }
+        .reseaux {
+            display: flex;
+            gap: 15px;
+        }
 
-            .projet{
-                width: 250px;
-            }
-         }
+        .reseaux a {
+            padding: 10px 25px;
+            border: 2px solid rgba(255,255,255,0.6);
+            color: bisque;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
 
-         .projets{
-            min-height:500px;
+        .reseaux a:hover {
+            background: brown;
+            transform: translateY(-3px);
+        }
+
+        .apropos-droite {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 400px;
+        }
+
+        .apropos-droite h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .competence span {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .barre {
+            width: 100%;
+            height: 10px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progression {
+            height: 100%;
+            width: 0%;
+            background: brown;
+            border-radius: 10px;
+            transition: width 1.5s ease;
+        }
+
+        /* ========================
+           PROJETS
+        ======================== */
+        .projets{
+            min-height: 500px;
             margin-top: 100px;
             background: #42190b;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-         }
-         .projets h2{
+            padding: 20px;
+        }
+
+        .projets h2{
             margin: 30px;
             font-size: 3rem;
             color: bisque;
-         }
+        }
 
-         .grid{
+        .grid{
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-           margin-bottom: 50px;
+            margin-bottom: 50px;
+        }
 
-            
-            
-
-         }
-
-         .card{
+        .card{
             background: #2a0f05;
             border: 1px solid bisque;
             border-radius: 20px;
@@ -266,40 +302,38 @@
             justify-content: center;
             align-items: center;
             color: bisque;
-            
+            padding: 15px;
+        }
 
-         }
-         .card img{
+        .card img{
             width: 200px;
             height: 200px;
             border-radius: 20px;
             box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.637);
             cursor: pointer;
             transition: 0.3s;
-         }
+        }
 
-         .card img:hover{
+        .card img:hover{
             transform: scale(1.3);
-         }
-         .card h3{
+        }
+
+        .card h3{
             margin: 10px 0;
             font-size: 1.5rem;
             font-family: verdana;
+        }
 
-         }
-         .card p{
+        .card p{
             margin: 10px 0;
             font-size: 1rem;
             font-family: verdana;
             text-align: justify;
+        }
 
-         }
-         .card button{
-            
-            font-size: 1rem;
+        .card button{
             font-family: verdana;
-            border-radius: 10px;
-             background: transparent;
+            background: transparent;
             border: 2px solid rgba(255, 255, 255, 0.6);
             color: white;
             padding: 15px 35px;
@@ -307,16 +341,13 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             cursor: pointer;
-            position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            
+        }
 
-         }
-
-         .card button:hover{
+        .card button:hover{
             background: brown;
             border-color: rgba(255, 255, 255, 1);
             transform: translateY(-3px);
@@ -328,226 +359,109 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .apropos {
-    min-height: 500px;
-    margin-top: 100px;
-    background: #42190b;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 20px;
-    color: bisque;
-}
+        /* ========================
+           CONTACT
+        ======================== */
+        .sec{
+            height: 90px;
+        }
 
-.apropos h2 {
-    font-size: 3rem;
-    margin-bottom: 50px;
-}
+        .contact{
+            background-color: #42190b;
+            min-height: 500px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 40px 20px;
+        }
 
-.apropos-content {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 50px;
-    width: 90%;
-}
+        .cont{
+            display: flex;
+            flex-direction: column;
+        }
 
-.apropos-gauche {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    max-width: 400px;
-}
+        .cont h2{
+            font-family: georgia;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
 
-.apropos-gauche img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
+        .cont p{
+            font-family: georgia;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
 
-.apropos-gauche p {
-    text-align: justify;
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
+        .cont div{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
 
-.reseaux {
-    display: flex;
-    gap: 15px;
-}
+        .cont img{
+            width: 30px;
+            height: 30px;
+        }
 
-.reseaux a {
-    padding: 10px 25px;
-    border: 2px solid rgba(255,255,255,0.6);
-    color: bisque;
-    text-decoration: none;
-    border-radius: 20px;
-    transition: 0.3s;
-}
+        form{
+            display: flex;
+            flex-direction: column;
+        }
 
-.reseaux a:hover {
-    background: brown;
-    transform: translateY(-3px);
-}
+        .form{
+            display: grid;
+            gap: 10px;
+        }
 
-/* Compétences */
-.apropos-droite {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 400px;
-}
+        .form div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.apropos-droite h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
+        .contactt{
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
 
-.competence span {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 1rem;
-}
+        form input{
+            width: 250px;
+            height: 50px;
+            background: transparent;
+            border: 2px solid white;
+            color: bisque;
+            border-radius: 10px;
+            padding-left: 10px;    
+        }
 
-.barre {
-    width: 100%;
-    height: 10px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 10px;
-    overflow: hidden;
-}
+        form input:focus{
+            outline: none;
+            border-color: brown;
+        }
 
-.progression {
-    height: 100%;
-    width: 0%;
-    background: brown;
-    border-radius: 10px;
-    transition: width 1.5s ease;
-}
+        #mess{
+            background: #2a0f05;
+            padding: 10px;
+            width: 250px;
+            height: 100px;
+            border-radius: 10px;
+            resize: none;
+            border: 2px solid white;
+        }
 
-/* Responsive */
-@media screen and (max-width: 600px) {
-    .apropos-content {
-        flex-direction: column;
-    }
+        #mess:focus{
+            outline: none;
+            border-color: brown;
+        }
 
-    .apropos-droite {
-        width: 100%;
-    }
-}
-
-.sec{
-    height: 90px;
-    
-}
-
-.contact{
-    background-color: #42190b;
-    height: 500px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.cont{
-    display: flex;
-    flex-direction: column;
-    
-}
-
-.cont h2{
-    font-family: georgia;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.cont p{
-     font-family: georgia;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-.cont div{
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.cont img{
-    width: 30px;
-    height: 30px;
-}
-
-form{
-    display: flex;
-    flex-direction: column;
-
-}
-
-
-.form{
-    display: grid;
-    gap:10px;
-
-}
-
-.form div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-.contactt{
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-
-}
-
-#nom{
-    grid-area: nom;
-}                               
-
-#email{
-    grid-area: email;
-}
-
-form input{
-    grid-area: nom;
-    width: 250px;
-    height: 50px;
-    background: transparent;
-    border: 2px solid white;
-    color: bisque;
-    border-radius: 10px;
-    padding-left: 10px;    
-}
-
-form input:focus{
-    outline: none;
-    border-color: brown;
-}
-#mess{
-    grid-area: mess;
-    background: #2a0f05;
-    padding:  0 10px ;
-    width: 250px;
-    height: 100px;
-    border-radius: 10px;
-    resize: none;
-}
-
-form button{
-     font-size: 1rem;
+        form button{
             width: 150px;
             margin-left: 180px;
             font-family: verdana;
-            border-radius: 10px;
-             background: transparent;
+            background: transparent;
             border: 2px solid rgba(255, 255, 255, 0.6);
             color: white;
             padding: 15px 35px;
@@ -555,15 +469,12 @@ form button{
             text-transform: uppercase;
             letter-spacing: 1px;
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
             border-radius: 20px;
-    
-}
+        }
 
-form button:hover{
+        form button:hover{
             background: brown;
             border-color: rgba(255, 255, 255, 1);
             transform: translateY(-3px);
@@ -575,41 +486,196 @@ form button:hover{
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
- .footer{
-    background: #2a0f05;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
- }        
+        /* ========================
+           FOOTER
+        ======================== */
+        .footer{
+            background: #2a0f05;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+        }
 
- .footer p{
-    font-family: georgia;
-    font-size: 1.3rem;
-    color: bisque;
+        .footer p{
+            font-family: georgia;
+            font-size: 1.3rem;
+            color: bisque;
+        }
 
- }
+        .social{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
- .social{
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
+        .social img{
+            width: 50px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
 
- .social img{
-    width: 50px;
-    margin-left: 10px;
-    cursor: pointer;
-    transition: 0.2s;
- }
+        .social img:hover{
+            transform: scale(1.3);
+        }
 
- .social img:hover{
-    transform: scale(1.3);
- }
+        /* ========================
+           RESPONSIVE 768px (tablette)
+        ======================== */
+        @media screen and (max-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
 
+            .card {
+                width: 100%;
+            }
 
+            .apropos-content {
+                flex-direction: column;
+            }
+
+            .apropos-droite {
+                width: 100%;
+            }
+        }
+
+        /* ========================
+           RESPONSIVE 600px (mobile)
+        ======================== */
+        @media screen and (max-width: 600px) {
+
+            /* Navbar */
+            .hamburger {
+                display: flex;
+            }
+
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #2a0f05;
+                padding: 10px 0;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                z-index: 999;
+            }
+
+            .navbar ul.active {
+                display: flex;
+            }
+
+            .navbar li {
+                width: 100%;
+                border-radius: 0;
+                padding: 15px 20px;
+            }
+
+            /* Hero */
+            .hero {
+                flex-direction: column-reverse;
+                padding: 20px;
+                min-height: auto;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .projet {
+                width: 100%;
+            }
+
+            .projet h2 {
+                font-size: 2rem;
+            }
+
+            .projet h3 {
+                font-size: 1.2rem;
+            }
+
+            .image img {
+                width: 200px;
+            }
+
+            /* À propos */
+            .apropos-content {
+                flex-direction: column;
+            }
+
+            .apropos-droite {
+                width: 100%;
+            }
+
+            .apropos h2 {
+                font-size: 2rem;
+            }
+
+            /* Projets */
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                width: 100%;
+            }
+
+            /* Contact */
+            .contact {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .cont p {
+                font-size: 1.1rem;
+            }
+
+            form input, #mess {
+                width: 100%;
+            }
+
+            .form div {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            form button {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            /* Footer */
+            .footer p {
+                font-size: 1rem;
+                text-align: center;
+                padding: 0 10px;
+            }
+        }
+
+        /* ========================
+           RESPONSIVE 320px (très petit)
+        ======================== */
+        @media screen and (max-width: 320px) {
+            .header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .projet h2 {
+                font-size: 1.5rem;
+            }
+
+            .apropos h2, .projets h2 {
+                font-size: 1.8rem;
+            }
+
+            .cont h2 {
+                font-size: 1.5rem;
+            }
+        }
 
     </style>
 </head>
@@ -617,16 +683,14 @@ form button:hover{
     <header class="header">
         <h1>Portfolio</h1>
         <nav class="navbar">
-
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-
             <ul class="nav-links">
                 <li>Accueil</li>
-                <li><a href="#apropos" >A propos</a></li>
+                <li><a href="#apropos">A propos</a></li>
                 <li><a href="#projecct">Projets</a></li>
                 <li><a href="#Contact">Contact</a></li>
             </ul>
@@ -635,64 +699,52 @@ form button:hover{
 
     <section class="hero">
         <div class="projet">
-            <h2 >Bienvenue sur mon site </h2>
+            <h2>Bienvenue sur mon site</h2>
             <h3>Ici vous allez voir tout mes projets</h3>
             <a href="#projecct"><button>Voir mes projets</button></a>
         </div>
         <div class="image">
             <img src="image/Design_sans_titre-removebg-preview.png" alt="photo homme">
-
         </div>
-
     </section>
 
-     <section class="apropos" id="apropos">
-    <h2>À propos</h2>
-    <div class="apropos-content">
-
-        <!-- Gauche : photo + texte -->
-        <div class="apropos-gauche">
-            <img src="image/photo_2026-03-16_05-42-23-removebg-preview.png" alt="photo Djibi">
-            <p>Je m'appelle <strong>Djibi Wellé</strong>, j'ai 24 ans.
-            Je suis un développeur web junior passionné par la programmation.
-            Mon objectif est de travailler avec les plus grandes entreprises tech.</p>
-            <div class="reseaux">
-                <a href="#">GitHub</a>
-                <a href="#">LinkedIn</a>
+    <section class="apropos" id="apropos">
+        <h2>À propos</h2>
+        <div class="apropos-content">
+            <div class="apropos-gauche">
+                <img src="image/photo_2026-03-16_05-42-23-removebg-preview.png" alt="photo Djibi">
+                <p>Je m'appelle <strong>Djibi Wellé</strong>, j'ai 24 ans.
+                Je suis un développeur web junior passionné par la programmation.
+                Mon objectif est de travailler avec les plus grandes entreprises tech.</p>
+                <div class="reseaux">
+                    <a href="#">GitHub</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="apropos-droite">
+                <h3>Mes compétences</h3>
+                <div class="competence">
+                    <span>HTML</span>
+                    <div class="barre"><div class="progression" data-width="90%"></div></div>
+                </div>
+                <div class="competence">
+                    <span>CSS</span>
+                    <div class="barre"><div class="progression" data-width="85%"></div></div>
+                </div>
+                <div class="competence">
+                    <span>JavaScript</span>
+                    <div class="barre"><div class="progression" data-width="50%"></div></div>
+                </div>
+                <div class="competence">
+                    <span>Python</span>
+                    <div class="barre"><div class="progression" data-width="40%"></div></div>
+                </div>
             </div>
         </div>
-
-        <!-- Droite : compétences -->
-        <div class="apropos-droite">
-            <h3>Mes compétences</h3>
-
-            <div class="competence">
-                <span>HTML</span>
-                <div class="barre"><div class="progression" data-width="90%"></div></div>
-            </div>
-
-            <div class="competence">
-                <span>CSS</span>
-                <div class="barre"><div class="progression" data-width="85%"></div></div>
-            </div>
-
-            <div class="competence">
-                <span>JavaScript</span>
-                <div class="barre"><div class="progression" data-width="50%"></div></div>
-            </div>
-
-            <div class="competence">
-                <span>Python</span>
-                <div class="barre"><div class="progression" data-width="40%"></div></div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
+    </section>
 
     <section class="projets" id="projecct">
-        <h2>Mes project</h2>
+        <h2>Mes Projets</h2>
         <div class="grid">
             <div class="card">
                 <img src="image/resto2.jpg" alt="">
@@ -701,7 +753,6 @@ form button:hover{
                 et une interface responsive pour une navigation simple sur ordinateur et smartphone.</p>
                 <button>Voir plus</button>
             </div>
-
             <div class="card">
                 <img src="image/rbnb.jpg" alt="">
                 <h3>RBNB</h3>
@@ -709,7 +760,6 @@ form button:hover{
                     un design clair et une interface responsive adaptée à tous les écrans.</p>
                 <button>Voir plus</button>
             </div>
-
             <div class="card">
                 <img src="image/coffee.jpg" alt="">
                 <h3>Coffee</h3>
@@ -717,26 +767,23 @@ form button:hover{
                 moderne permettant de présenter le café, ses produits et son ambiance.</p>
                 <button>Voir plus</button>
             </div>
-
             <div class="card">
                 <img src="image/actualites.jpg" alt="">
                 <h3>Actualités</h3>
-                <p>Site web d’actualités réalisé avec HTML et CSS, conçu pour présenter les 
+                <p>Site web d'actualités réalisé avec HTML et CSS, conçu pour présenter les 
                 dernières informations dans une interface claire et facile à lire.</p>
                 <button>Voir plus</button>
             </div>
-
             <div class="card">
                 <img src="image/information.jpg" alt="">
                 <h3>Info-Minute</h3>
-                <p>Site web d’information rapide conçu avec HTML et CSS, permettant de consulter les 
+                <p>Site web d'information rapide conçu avec HTML et CSS, permettant de consulter les 
                 actualités importantes de manière simple, rapide et accessible sur tous les écrans.</p>
                 <button>Voir plus</button>
             </div>
-
             <div class="card">
                 <img src="image/vetements.jpg" alt="">
-                <h3>vêtement</h3>
+                <h3>Vêtements</h3>
                 <p>Site web de vêtements réalisé avec HTML et CSS, présentant une collection
                  de produits avec un design moderne et une interface simple à parcourir.</p>
                 <button>Voir plus</button>
@@ -744,82 +791,74 @@ form button:hover{
         </div>
     </section>
 
+    <section class="sec"></section>
 
-
-   
-
-<section class="sec"></section>
-
-<section class="contact" id="Contact">
-    <div class="cont">
-            <h2>Info personelle</h2>
-            <p>Je suis toujour a votre écoute </p>
+    <section class="contact" id="Contact">
+        <div class="cont">
+            <h2>Info personnelle</h2>
+            <p>Je suis toujours à votre écoute</p>
             <div>
-                <img src="/image/email.png" alt="">
+                <img src="image/email.png" alt="">
                 <span>Djibisoon2024@gmail.com</span>
             </div>
             <div>
-                <img src="/image/telephone.png" alt="">
+                <img src="image/telephone.png" alt="">
                 <span>+222 33172615</span>
             </div>
             <div>
-                <img src="/image/monde.png" alt="">
+                <img src="image/monde.png" alt="">
                 <span>www.djimswell.portfolio.mr</span>
             </div>
             <div>
-                <img src="/image/heure.png" alt="">
+                <img src="image/heure.png" alt="">
                 <span>09:00-18:00</span>
             </div>
-            
         </div>
-    <form> 
-        <div class="contactt">
+        <form>
+            <div class="contactt">
+                <h2>Contactez-moi</h2>
+            </div>
+            <div class="form">
+                <div>
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" placeholder="Votre nom">
+                </div>
+                <div>
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="Votre email">
+                </div>
+                <div>
+                    <label for="mess">Message</label>
+                    <textarea id="mess" placeholder="Ici votre message"></textarea>
+                </div>
+                <button id="btn">Envoyer</button>
+            </div>
+        </form>
+    </section>
 
-            <h2>contactez-moi</h2>
+    <footer class="footer">
+        <p>© 2026 Djibi Wellé — Tous droits réservés</p>
+        <div class="social">
+            <img src="image/facebook2.png" alt="facebook">
+            <img src="image/instagram.png" alt="instagram">
+            <img src="image/tiktok.png" alt="tiktok">
         </div>
-        <div class="form">
-           
-         <div><label for="name">Nom</label>
-        <input type="text" id="nom" placeholder="Votre nom" ></div>
-        
-        <div><label for="email">E-mail</label>
-        <input type="email" id="email" placeholder="Votre email" ></div>
-        
-        <div><label for="message">Message</label>
-        <textarea name="" id="mess" placeholder="Ici votre message"></textarea></div>
-        <button id="btn">Envoyer</button>
-        </div> 
-    </form>
-</section>
-
-<footer  class="footer">
-    <p>
-        © 2026 Djibi Wellé — Tous droits réservés
-    </p>
-
-    <div class="social">
-        <img src="image/facebook2.png" alt="facebook">
-        <img src="image/instagram.png" alt="instagram">
-        <img src="image/tiktok.png" alt="tiktok">
-    </div>
-
-
-</footer>
+    </footer>
     
-        <script>
-            const hamburger = document.querySelector(".hamburger")
-            const navlinks = document.querySelector(".nav-links")
-            const progressions = document.querySelectorAll(".progression");
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navlinks = document.querySelector(".nav-links");
+        const progressions = document.querySelectorAll(".progression");
 
-            progressions.forEach(function(barre) {
+        progressions.forEach(function(barre) {
             const largeur = barre.getAttribute("data-width");
             barre.style.width = largeur;
-            });
+        });
 
-            hamburger.addEventListener("click", function(){
+        hamburger.addEventListener("click", function(){
             navlinks.classList.toggle("active");
-            })
-        </script>
+        });
+    </script>
     
 </body>
 </html>
