@@ -4,684 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Djibi Wellé</title>
-    
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            text-decoration: none;
-            color: bisque;
-            box-sizing: border-box;
-        }
-
-        html{
-            scroll-behavior: smooth;
-        }
-
-        body{
-            background: #361509;
-        }
-
-        .header{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;     
-            color: bisque;
-            margin-top: 10px;
-        }
-
-        .header h1{
-            padding-left: 10px;
-        }
-
-        .navbar ul {
-            display: flex;
-            gap: 20px;
-            padding-right: 20px;
-            font-size: 1.3rem;
-        }
-
-        .navbar li{
-            width: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            cursor: pointer;
-            border-radius: 20px;
-            transition: 0.2s;
-        }
-        
-        .navbar a{
-            text-decoration: none;
-            color: bisque;
-        }
-
-        .navbar li:hover{
-            background: brown;
-            border-color: rgba(255, 255, 255, 1);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .navbar li:active{
-            transform: translateY(0);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .hamburger{
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding-right: 20px;
-        }
-
-        .hamburger span{
-            width: 30px;
-            height: 3px;
-            background: bisque;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        /* ========================
-           HERO
-        ======================== */
-        .hero{
-            width: 90%;
-            margin: 0 auto;
-            min-height: 500px;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center; 
-            color: bisque;
-        }
-
-        .projet{
-            width: 700px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            animation: slideFromleft 2s ease;
-        }
-
-        @keyframes slideFromleft {
-            from{ transform: translateX(-700px); opacity: 0; }
-            to{ transform: translateX(0); opacity: 1; }
-        }
-
-        .projet h2{
-            font-family: georgia;
-            font-size: 3.5rem;
-        }
-
-        .projet h3{
-            font-size: 2rem;
-            font-family: georgia;
-        }
-
-        .projet button{
-            background: transparent;
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            color: white;
-            padding: 15px 35px;
-            font-size: 18px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-        }
-
-        .projet button:hover{
-            background: brown;
-            border-color: rgba(255, 255, 255, 1);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .projet button:active{
-            transform: translateY(0);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .image img{
-            width: 300px;
-            animation: slideFromRight 2s ease;
-        }
-
-        @keyframes slideFromRight {
-            from{ transform: translateX(300px); opacity: 0; }
-            to{ transform: translateX(0); opacity: 1; }
-        }
-
-        /* ========================
-           À PROPOS
-        ======================== */
-        .apropos {
-            min-height: 500px;
-            margin-top: 100px;
-            background: #42190b;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 50px 20px;
-            color: bisque;
-        }
-
-        .apropos h2 {
-            font-size: 3rem;
-            margin-bottom: 50px;
-        }
-
-        .apropos-content {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            gap: 50px;
-            width: 90%;
-        }
-
-        .apropos-gauche {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            max-width: 400px;
-        }
-
-        .apropos-gauche img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .apropos-gauche p {
-            text-align: justify;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .reseaux {
-            display: flex;
-            gap: 15px;
-        }
-
-        .reseaux a {
-            padding: 10px 25px;
-            border: 2px solid rgba(255,255,255,0.6);
-            color: bisque;
-            text-decoration: none;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-
-        .reseaux a:hover {
-            background: brown;
-            transform: translateY(-3px);
-        }
-
-        .apropos-droite {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            width: 400px;
-        }
-
-        .apropos-droite h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .competence span {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 1rem;
-        }
-
-        .barre {
-            width: 100%;
-            height: 10px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .progression {
-            height: 100%;
-            width: 0%;
-            background: brown;
-            border-radius: 10px;
-            transition: width 1.5s ease;
-        }
-
-        /* ========================
-           PROJETS
-        ======================== */
-        .projets{
-            min-height: 500px;
-            margin-top: 100px;
-            background: #42190b;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .projets h2{
-            margin: 30px;
-            font-size: 3rem;
-            color: bisque;
-        }
-
-        .grid{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-bottom: 50px;
-        }
-
-        .card{
-            background: #2a0f05;
-            border: 1px solid bisque;
-            border-radius: 20px;
-            box-shadow: -2px 2px 8px 0px #a9a5a594;
-            width: 400px;
-            min-height: 450px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: bisque;
-            padding: 15px;
-        }
-
-        .card img{
-            width: 200px;
-            height: 200px;
-            border-radius: 20px;
-            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.637);
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .card img:hover{
-            transform: scale(1.3);
-        }
-
-        .card h3{
-            margin: 10px 0;
-            font-size: 1.5rem;
-            font-family: verdana;
-        }
-
-        .card p{
-            margin: 10px 0;
-            font-size: 1rem;
-            font-family: verdana;
-            text-align: justify;
-        }
-
-        .card button{
-            font-family: verdana;
-            background: transparent;
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            color: white;
-            padding: 15px 35px;
-            font-size: 18px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-        }
-
-        .card button:hover{
-            background: brown;
-            border-color: rgba(255, 255, 255, 1);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .card button:active{
-            transform: translateY(0);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        /* ========================
-           CONTACT
-        ======================== */
-        .sec{
-            height: 90px;
-        }
-
-        .contact{
-            background-color: #42190b;
-            min-height: 500px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 40px 20px;
-        }
-
-        .cont{
-            display: flex;
-            flex-direction: column;
-        }
-
-        .cont h2{
-            font-family: georgia;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .cont p{
-            font-family: georgia;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        .cont div{
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .cont img{
-            width: 30px;
-            height: 30px;
-        }
-
-        form{
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form{
-            display: grid;
-            gap: 10px;
-        }
-
-        .form div{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .contactt{
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-        }
-
-        form input{
-            width: 250px;
-            height: 50px;
-            background: transparent;
-            border: 2px solid white;
-            color: bisque;
-            border-radius: 10px;
-            padding-left: 10px;    
-        }
-
-        form input:focus{
-            outline: none;
-            border-color: brown;
-        }
-
-        #mess{
-            background: #2a0f05;
-            padding: 10px;
-            width: 250px;
-            height: 100px;
-            border-radius: 10px;
-            resize: none;
-            border: 2px solid white;
-        }
-
-        #mess:focus{
-            outline: none;
-            border-color: brown;
-        }
-
-        form button{
-            width: 150px;
-            margin-left: 180px;
-            font-family: verdana;
-            background: transparent;
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            color: white;
-            padding: 15px 35px;
-            font-size: 18px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-        }
-
-        form button:hover{
-            background: brown;
-            border-color: rgba(255, 255, 255, 1);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        form button:active{
-            transform: translateY(0);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        /* ========================
-           FOOTER
-        ======================== */
-        .footer{
-            background: #2a0f05;
-            height: 300px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .footer p{
-            font-family: georgia;
-            font-size: 1.3rem;
-            color: bisque;
-        }
-
-        .social{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .social img{
-            width: 50px;
-            margin-left: 10px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .social img:hover{
-            transform: scale(1.3);
-        }
-
-        /* ========================
-           RESPONSIVE 768px (tablette)
-        ======================== */
-        @media screen and (max-width: 768px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .card {
-                width: 100%;
-            }
-
-            .apropos-content {
-                flex-direction: column;
-            }
-
-            .apropos-droite {
-                width: 100%;
-            }
-        }
-
-        /* ========================
-           RESPONSIVE 600px (mobile)
-        ======================== */
-        @media screen and (max-width: 600px) {
-
-            /* Navbar */
-            .hamburger {
-                display: flex;
-            }
-
-            .navbar ul {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background: #2a0f05;
-                padding: 10px 0;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                z-index: 999;
-            }
-
-            .navbar ul.active {
-                display: flex;
-            }
-
-            .navbar li {
-                width: 100%;
-                border-radius: 0;
-                padding: 15px 20px;
-            }
-
-            /* Hero */
-            .hero {
-                flex-direction: column-reverse;
-                padding: 20px;
-                min-height: auto;
-                gap: 20px;
-                text-align: center;
-            }
-
-            .projet {
-                width: 100%;
-            }
-
-            .projet h2 {
-                font-size: 2rem;
-            }
-
-            .projet h3 {
-                font-size: 1.2rem;
-            }
-
-            .image img {
-                width: 200px;
-            }
-
-            /* À propos */
-            .apropos-content {
-                flex-direction: column;
-            }
-
-            .apropos-droite {
-                width: 100%;
-            }
-
-            .apropos h2 {
-                font-size: 2rem;
-            }
-
-            /* Projets */
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .card {
-                width: 100%;
-            }
-
-            /* Contact */
-            .contact {
-                flex-direction: column;
-                gap: 40px;
-            }
-
-            .cont p {
-                font-size: 1.1rem;
-            }
-
-            form input, #mess {
-                width: 100%;
-            }
-
-            .form div {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 5px;
-            }
-
-            form button {
-                margin-left: 0;
-                width: 100%;
-            }
-
-            /* Footer */
-            .footer p {
-                font-size: 1rem;
-                text-align: center;
-                padding: 0 10px;
-            }
-        }
-
-        /* ========================
-           RESPONSIVE 320px (très petit)
-        ======================== */
-        @media screen and (max-width: 320px) {
-            .header {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .projet h2 {
-                font-size: 1.5rem;
-            }
-
-            .apropos h2, .projets h2 {
-                font-size: 1.8rem;
-            }
-
-            .cont h2 {
-                font-size: 1.5rem;
-            }
-        }
-
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header class="header">
-        <h1>Portfolio</h1>
+        <h1>Djibi<span>.</span>Dev</h1>
         <nav class="navbar">
             <div class="hamburger">
                 <span></span>
@@ -689,8 +18,8 @@
                 <span></span>
             </div>
             <ul class="nav-links">
-                <li>Accueil</li>
-                <li><a href="#apropos">A propos</a></li>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
                 <li><a href="#projecct">Projets</a></li>
                 <li><a href="#Contact">Contact</a></li>
             </ul>
@@ -699,23 +28,26 @@
 
     <section class="hero">
         <div class="projet">
-            <h2>Bienvenue sur mon site</h2>
-            <h3>Ici vous allez voir tout mes projets</h3>
-            <a href="#projecct"><button>Voir mes projets</button></a>
+            <div class="hero-badge"><div class="hero-dot"></div>Disponible pour des projets</div>
+            <h2>Bienvenue sur<br><span>mon portfolio</span></h2>
+            <h3>Ici vous allez voir tous mes projets — développeur web junior basé à Nouakchott.</h3>
+            <div class="hero-btns">
+                <a href="#projecct"><button class="btn-primary">Voir mes projets</button></a>
+                <a href="#Contact"><button class="btn-outline">Me contacter</button></a>
+            </div>
         </div>
         <div class="image">
-            <img src="image/Design_sans_titre-removebg-preview.png" alt="photo homme">
+            <img src="image/djimswell.png" alt="photo homme">
         </div>
     </section>
 
     <section class="apropos" id="apropos">
+        <div class="section-eyebrow">Qui suis-je ?</div>
         <h2>À propos</h2>
         <div class="apropos-content">
             <div class="apropos-gauche">
-                <img src="image/photo_2026-03-16_05-42-23-removebg-preview.png" alt="photo Djibi">
-                <p>Je m'appelle <strong>Djibi Wellé</strong>, j'ai 24 ans.
-                Je suis un développeur web junior passionné par la programmation.
-                Mon objectif est de travailler avec les plus grandes entreprises tech.</p>
+                <img src="image/photo_2026-03-16_05-42-23-removebg-preview.png" target="_blank" alt="photo Djibi">
+                <p>Je m'appelle <strong>Djibi Wellé</strong>, j'ai 24 ans. Je suis un développeur web junior passionné par la programmation. Mon objectif est de travailler avec les plus grandes entreprises tech.</p>
                 <div class="reseaux">
                     <a href="#">GitHub</a>
                     <a href="#">LinkedIn</a>
@@ -724,19 +56,19 @@
             <div class="apropos-droite">
                 <h3>Mes compétences</h3>
                 <div class="competence">
-                    <span>HTML</span>
+                    <span>HTML <em>90%</em></span>
                     <div class="barre"><div class="progression" data-width="90%"></div></div>
                 </div>
                 <div class="competence">
-                    <span>CSS</span>
+                    <span>CSS <em>85%</em></span>
                     <div class="barre"><div class="progression" data-width="85%"></div></div>
                 </div>
                 <div class="competence">
-                    <span>JavaScript</span>
+                    <span>JavaScript <em>50%</em></span>
                     <div class="barre"><div class="progression" data-width="50%"></div></div>
                 </div>
                 <div class="competence">
-                    <span>Python</span>
+                    <span>Python <em>40%</em></span>
                     <div class="barre"><div class="progression" data-width="40%"></div></div>
                 </div>
             </div>
@@ -744,74 +76,97 @@
     </section>
 
     <section class="projets" id="projecct">
+        <div class="section-eyebrow">Portfolio</div>
         <h2>Mes Projets</h2>
         <div class="grid">
             <div class="card">
-                <img src="image/resto2.jpg" alt="">
-                <h3>Restaurant</h3>
-                <p>Site web de restaurant réalisé avec HTML et CSS, présentant un design moderne
-                et une interface responsive pour une navigation simple sur ordinateur et smartphone.</p>
-                <button>Voir plus</button>
+                <img src="image/resto2.jpg" alt="Restaurant">
+                <div class="card-body">
+                    <h3>Restaurant</h3>
+                    <p>Site web de restaurant réalisé avec HTML et CSS, présentant un design moderne et une interface responsive.</p>
+                    <div class="card-bottom">
+                        <span class="card-tag">HTML / CSS</span>
+                        <button><a href="/Restaurant/Restaurant.html">Voir plus</a></button>
+                    </div>
+                </div>
             </div>
             <div class="card">
-                <img src="image/rbnb.jpg" alt="">
-                <h3>RBNB</h3>
-                <p>Site web de location type Airbnb réalisé avec HTML et CSS, mettant en avant des logements avec 
-                    un design clair et une interface responsive adaptée à tous les écrans.</p>
-                <button>Voir plus</button>
+                <img src="image/rbnb.jpg" alt="RBNB">
+                <div class="card-body">
+                    <h3>RBNB</h3>
+                    <p>Site web de location type Airbnb avec un design clair et une interface responsive adaptée à tous les écrans.</p>
+                    <div class="card-bottom">
+                        <span class="card-tag">HTML / CSS</span>
+                        <button>Voir plus</button>
+                    </div>
+                </div>
             </div>
             <div class="card">
-                <img src="image/coffee.jpg" alt="">
-                <h3>Coffee</h3>
-                <p>Site web de café réalisé avec HTML et CSS, avec un design simple et
-                moderne permettant de présenter le café, ses produits et son ambiance.</p>
-                <button>Voir plus</button>
+                <img src="image/coffee.jpg" alt="Coffee">
+                <div class="card-body">
+                    <h3>Coffee</h3>
+                    <p>Site web de café avec un design simple et moderne permettant de présenter le café et ses produits.</p>
+                    <div class="card-bottom">
+                        <span class="card-tag">HTML / CSS</span>
+                        <button>Voir plus</button>
+                    </div>
+                </div>
             </div>
             <div class="card">
-                <img src="image/actualites.jpg" alt="">
-                <h3>Actualités</h3>
-                <p>Site web d'actualités réalisé avec HTML et CSS, conçu pour présenter les 
-                dernières informations dans une interface claire et facile à lire.</p>
-                <button>Voir plus</button>
+                <img src="image/actualites.jpg" alt="Actualités">
+                <div class="card-body">
+                    <h3>Actualités</h3>
+                    <p>Site web d'actualités conçu pour présenter les dernières informations dans une interface claire.</p>
+                    <div class="card-bottom">
+                        <span class="card-tag">HTML / CSS</span>
+                        <button>Voir plus</button>
+                    </div>
+                </div>
             </div>
             <div class="card">
-                <img src="image/information.jpg" alt="">
-                <h3>Info-Minute</h3>
-                <p>Site web d'information rapide conçu avec HTML et CSS, permettant de consulter les 
-                actualités importantes de manière simple, rapide et accessible sur tous les écrans.</p>
-                <button>Voir plus</button>
+                <img src="image/information.jpg" alt="Info-Minute">
+                <div class="card-body">
+                    <h3>Info-Minute</h3>
+                    <p>Site web d'information rapide permettant de consulter les actualités importantes de manière simple.</p>
+                    <div class="card-bottom">
+                        <span class="card-tag">HTML / CSS</span>
+                        <button>Voir plus</button>
+                    </div>
+                </div>
             </div>
             <div class="card">
-                <img src="image/vetements.jpg" alt="">
-                <h3>Vêtements</h3>
-                <p>Site web de vêtements réalisé avec HTML et CSS, présentant une collection
-                 de produits avec un design moderne et une interface simple à parcourir.</p>
-                <button>Voir plus</button>
+                <img src="image/vetements.jpg" alt="Vêtements">
+                <div class="card-body">
+                    <h3>Vêtements</h3>
+                    <p>Site web de vêtements présentant une collection de produits avec un design moderne et simple.</p>
+                    <div class="card-bottom">
+                        <span class="card-tag">HTML / CSS</span>
+                        <button>Voir plus</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
-    <section class="sec"></section>
 
     <section class="contact" id="Contact">
         <div class="cont">
             <h2>Info personnelle</h2>
             <p>Je suis toujours à votre écoute</p>
             <div>
-                <img src="image/email.png" alt="">
+                <img src="image/email.png" alt="email">
                 <span>Djibisoon2024@gmail.com</span>
             </div>
             <div>
-                <img src="image/telephone.png" alt="">
+                <img src="image/telephone.png" alt="téléphone">
                 <span>+222 33172615</span>
             </div>
             <div>
-                <img src="image/monde.png" alt="">
+                <img src="image/monde.png" alt="site">
                 <span>www.djimswell.portfolio.mr</span>
             </div>
             <div>
-                <img src="image/heure.png" alt="">
-                <span>09:00-18:00</span>
+                <img src="image/heure.png" alt="horaires">
+                <span>09:00 - 18:00</span>
             </div>
         </div>
         <form>
@@ -829,9 +184,9 @@
                 </div>
                 <div>
                     <label for="mess">Message</label>
-                    <textarea id="mess" placeholder="Ici votre message"></textarea>
+                    <textarea id="mess" placeholder="Votre message ici..."></textarea>
                 </div>
-                <button id="btn">Envoyer</button>
+                <button type="submit">Envoyer</button>
             </div>
         </form>
     </section>
@@ -844,7 +199,7 @@
             <img src="image/tiktok.png" alt="tiktok">
         </div>
     </footer>
-    
+
     <script>
         const hamburger = document.querySelector(".hamburger");
         const navlinks = document.querySelector(".nav-links");
@@ -859,6 +214,6 @@
             navlinks.classList.toggle("active");
         });
     </script>
-    
+
 </body>
 </html>
